@@ -1,0 +1,107 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+<title>Versatile Multimedia Touch Slider</title>
+
+<link rel="stylesheet" href="css/sti_style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="mep/player/mediaelementplayer.css">
+
+<style>
+body { margin:0; }
+</style>
+    
+<script src="js/jquery-1.7.min.js"></script>
+<script src="js/jquery.touchSwipe.min.js"></script>
+<script src="js/jquery.versatileTouchSlider.min.js"></script>
+<script src="mep/player/mediaelement-and-player.min.js" id="script_media_element"></script>
+
+<script>
+
+jQuery(document).ready(function() {
+	
+	function getAjaxContent(filename, autoSlideActive) {
+		$.ajax({
+			url: 'ajax/' + filename,
+			type: 'GET',
+			dataType: 'html',
+			beforeSend: function() {
+				$('.sti_menu').append('<div class="preload_16"></div>');
+			},
+			success: function(data) {
+				
+				//remove preload
+				$('.preload_16').fadeTo("slow", 0);
+				setTimeout( function() { $('.preload_16').remove() }, 500);
+				
+				//load data and initialize plugin
+				setTimeout( function() { $('.ajax_content').html(data); }, 500);
+				setTimeout( function() { loadSlider(autoSlideActive) }, 500);
+			}
+		});
+	}
+	
+	var autoSlideActive = false;
+	getAjaxContent('mmedia_video_youtube.html', autoSlideActive);
+	
+	function loadSlider(autoSlideActive) {
+		
+		$.versatileTouchSlider('#ex_multimedia', {
+				slideWidth: 534, // some number. ex: 534 or '100%'
+				slideHeight: 'auto', // some number. ex: 220 or 'auto'
+				showPreviousNext: false,
+				currentSlide: 0,
+				scrollSpeed: 600,
+				autoSlide: (autoSlideActive) ? true : false,
+				autoSlideDelay: 4000,
+				showPlayPause: true,
+				showPagination: true,
+				alignPagination: 'center',
+				alignMenu: 'left',
+				swipeDrag: true,
+				sliderType: 'image_gallery', // image_shelf, image_banner, image_text, image_gallery
+				pageStyle: 'numbers', // numbers, bullets, thumbnails
+				onScrollEvent: function() {},
+				ajaxEvent: function(f, a) { 
+					//a = true/false
+					//f = filename
+					getAjaxContent(f, a);
+				}
+			}
+		);
+
+	}//loadSlider
+
+});//ready
+
+</script>
+
+</head>
+	
+<body>
+
+
+<div class="sti_container" id="ex_multimedia" style="margin-top:50px;">
+
+	<div class="slider_description"><strong>Multimedia Gallery Slider</strong>. Video formats available: Youtube, Vimeo, MP4, FLV. Audio (MP3 format). Images and HTML content.</div>
+
+	<div class="sti_menu" style="margin-left:5px;">
+        <a href="#" data-url="mmedia_video_youtube.html" class="sti_btn active">Video Youtube</a>
+        <a href="#" data-url="mmedia_video_vimeo.html" class="sti_btn">Video Vimeo</a>
+        <a href="#" data-url="mmedia_video_mp4.html" class="sti_btn">Video MP4</a>
+        <a href="#" data-url="mmedia_video_flv.html" class="sti_btn">Video FLV</a>
+        <a href="#" data-url="mmedia_audio_mp3.html" class="sti_btn">Audio MP3</a>
+        <a href="#" data-url="mmedia_image.html" class="sti_btn">Image</a>
+        <a href="#" data-url="mmedia_html_content.html" class="sti_btn">HTML</a>
+    </div>
+
+	<div class="sti_clear"></div>
+<!-- ajax content will be added here -->
+    
+    <div class="ajax_content" style="margin:5px 0;"></div>
+ 
+</div><!-- sti_container -->
+
+</body>
+</html>

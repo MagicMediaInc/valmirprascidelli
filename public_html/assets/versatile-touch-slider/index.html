@@ -1,0 +1,215 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Versatile Touch Slider." />
+
+<title>Versatile Touch Slider</title>
+
+
+<style>
+
+body { margin:0; font-family:Arial, Helvetica, sans-serif; }
+a { color:#222; text-decoration:none; border:none; }
+h3 { color:#333; }
+img { border:none; }
+
+#container { margin:20px auto; background:#f4f4f4; width:960px; box-shadow: 0px 0px 2px rgba(0, 0, 0, .3); font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#777; }
+
+#left_col { float:left; margin:20px 0 20px 20px; width:45%; }
+#right_col { float:right; margin:20px 20px 20px 0; width:45%; }
+
+.box { border:#ddd solid 1px; background:#fff; margin:20px auto; padding:10px 0; text-align:center; }
+.box2 { border:#ddd solid 1px; background:#fff; margin:40px 20px 20px; padding:10px 0; text-align:left; }
+.box2 li { line-height:20px; list-style:square }
+.box2 h3 { margin:0 25px; }
+.box2 p { margin:0 25px 20px; background:#eee; padding:10px; color:#444; } 
+.box2 hr { width:94%; margin:30px auto; background:#dddddd; border:#eee solid 1px; }
+
+.clear { clear:both; }
+#footer { font-size:11px; background:#fff; clear:both; margin-bottom:40px; margin:10px auto 50px; width:960px; text-align:center; color:#555 }
+
+#menu_options { margin:10px 20px 0px 20px; font-family:Arial, Helvetica, sans-serif; font-size:12px; padding:0px 0; height:32px; border-bottom:#ddd solid 1px; }
+#menu_options ul { list-style:none; margin:0; padding:0; margin-top:0px; margin-left:0px; }
+#menu_options ul li { list-style:none; margin:0; margin-right:1px; padding:0; display:block; float:left; color:#ccc; }
+#menu_options ul li a { color:#555; text-decoration:none; display:block; padding:8px; outline:none; letter-spacing:1px; }
+#menu_options ul li a:hover { color:#fff !important; text-decoration:none; display:block; background:#000; }
+.current_demo a { color:#000 !important; display:block; background:#ddd; }
+
+#features { display:none; }
+
+</style>
+    
+<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+
+<script>
+
+jQuery(document).ready(function() {
+	
+	$('a').mouseover(function(e) {
+		$(this).stop().animate({ opacity: .4 }, { duration: 400 });
+	}).mouseout(function() {
+		$(this).stop().animate({ opacity: 1 }, { duration: 400 });
+	});
+	
+	$('#features').hide();
+	
+	$('#menu_options a').on('click', function(e) {
+		
+		var html = $(this).html();
+		
+		if (html == 'Buy') return;
+		
+		e.preventDefault();
+		
+		if (html == 'Examples') {
+			$('.menu_examples').parent().addClass('current_demo');
+			$('.menu_features').parent().removeClass('current_demo');
+			$('#examples').css({display:'block', opacity:0 }).stop().delay(0).animate({ opacity: 1 }, { duration: 400 } );
+			$('#features').hide();
+		} else if (html == 'Features') {
+			$('.menu_examples').parent().removeClass('current_demo');
+			$('.menu_features').parent().addClass('current_demo');
+			$('#examples').hide();
+			$('#features').css({display:'block', opacity:0 }).stop().delay(0).animate({ opacity: 1 }, { duration: 400 } );
+		}
+	});
+	
+	
+});//ready
+
+</script>
+
+</head>
+	
+<body>
+
+<div id="container">
+	
+    <img src="img/assets/versatile_banner_top.jpg" alt="Versatile Touch Slider" title="Versatile Touch Slider" style="margin-bottom:0px;"/>
+    
+    <div id="menu_options">
+        <ul>
+            <li class="current_demo"><a class="menu_examples" href="#">Examples</a></li>
+            <li><a class="menu_features" href="#">Features</a></li>
+            <li><a class="menu_buy" href="http://codecanyon.net/item/versatile-touch-slider/3652068?ref=srvalle" target="_top" style="color:#C00">Buy</a></li>
+        </ul>
+    </div>
+    
+    <div class="clear"></div>
+    
+    
+    <div id="examples">
+
+		<div class="clear"></div>
+        <br><br>
+            	
+		<div class="slider_description" style="margin-top:40px auto 0 auto; background:#222; text-indent:10px; color:#ddd; padding:8px 0; font-size:15px; letter-spacing:1px; border-top:#ddd solid 1px; border-bottom:#ddd solid 1px;">Click on the images to see each example</div>
+
+        <div id="left_col">
+        
+            <div class="box">
+                <a href="ex_shelf_full.html" title="Image Shelf" target="_blank"><img src="img/assets/image_shelf.png" alt="" /></a>
+            </div>
+    
+            <div class="box">
+                <a href="ex_gallery.html" title="Image Gallery" target="_blank"><img src="img/assets/image_gallery.png" alt="" /></a>
+            </div>
+            
+            <div class="box">
+                <a href="ex_ajax.html" title="Image Shelf / Open content with ajax" target="_blank"><img src="img/assets/image_shelf_ajax.png" alt="" /></a>
+            </div>
+            
+            <div class="box">
+                <a href="ex_size.html" title="Image Shelf / Fixed and flexible height" target="_blank"><img src="img/assets/image_shelf_height.png" alt="" /></a>
+            </div>
+            
+            <div class="box">
+                <a href="ex_banner_vertical_orientation.html" title="Vertical Orientation" target="_blank"><img src="img/assets/image_banner_vertical_orientation.png" alt="" /></a>
+            </div>
+            
+        </div><!-- left_col -->
+        
+        <div id="right_col">
+        
+            <div class="box">
+                <a href="ex_banner_thumbnails.html" title="Image Banner Rotator with thumbnails" target="_blank"><img src="img/assets/image_banner.png" alt="" /></a>
+            </div>
+            
+            <div class="box">
+                <a href="ex_image_text.html" title="Image Text" target="_blank"><img src="img/assets/image_text.png" alt="" ></a>
+            </div>
+            
+            <div class="box">
+                <a href="ex_banner_callback_jquery_animate.html" title="Image Banner / Using callback" target="_blank"><img src="img/assets/image_banner_callback.png" alt="" /></a>
+            </div>
+            
+            <div class="box">
+                <a href="ex_gallery_multimedia.html" title="Image Gallery / Multimedia resources" target="_blank"><img src="img/assets/image_gallery_multimedia.png" alt="" /></a>
+            </div>
+            
+            <div class="box">
+                <a href="ex_banner_callback_css3_animate.html" title="CSS3 Animations" target="_blank"><img src="img/assets/image_banner_css3_animations.png" alt="" /></a>
+            </div>
+            
+        </div><!-- right_col -->
+    </div><!-- examples -->
+    
+    
+    <div id="features">
+    	
+    	<div class="box2">
+        
+        	<br><br>
+        	<h3>Main Features</h3>
+            <ul>
+                <li>Slider Type: Banner Rotator, Shelf, Gallery, Html Content;</li>
+                <li>CSS3 Animations / jQuery Fallback</li>
+                <li>Touch (mobile) Drag (desktop)</li>
+                <li>Lightbox (Video, Audio, Image, Html Content)</li>
+                <li>Ajax Content</li>
+                <li>Auto-slide</li>
+                <li>Responsive</li>
+                <li>Icons, Ribbons, Custom Tooltip (mobile)</li>
+                <li>Much more...</li>
+            </ul>
+            
+            <hr>
+            
+            <h3>Parameters</h3>
+            <ul>
+                <li>slideWidth</li>
+               	<li>slideHeight</li>
+                <li>showPreviousNext</li>
+                <li>currentSlide</li>
+                <li>scrollSpeed</li>
+                <li>autoSlide</li>
+                <li>autoSlideDelay</li>
+                <li>showPlayPause</li>
+                <li>showPagination</li>
+                <li>alignPagination</li>
+                <li>alignMenu</li>
+                <li>swipeDrag</li>
+                <li>sliderType</li>
+                <li>pageStyle</li>
+                <li>orientation</li>
+                <li>onScrollEvent</li>
+                <li>ajaxEvent</li>
+            </ul>
+           
+            <br>
+            <p>The details of all the parameters are within the documentation. Many options are set in their own html or style file. Example: Icons, Ribbons etc.</p>
+    	</div>
+    </div>
+    
+    <br>
+    
+    <div class="clear"></div>
+  
+</div>
+
+<div id="footer">Design and development by <a href="http://srvalle.com" target="_blank">Srvalle</a></div>
+
+</body>
+</html>

@@ -1,0 +1,256 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+<title>Versatile Touch Slider</title>
+
+<link rel="stylesheet" href="css/sti_style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="css/animate.css" type="text/css" media="screen">
+
+<!-- 
+	INFO: To work properly you need to open the file "animate.css" (above).
+    See all effects available here: http://daneden.me/animate/
+-->
+
+<style>
+body { margin:0; }
+
+.text_animate1 { background:#3eb1bb; color:#ffffff; padding:10px; font-size:18px; display:none; position:absolute; }
+.text_animate2 { background:#a1cb0f; color:#ffffff; padding:10px; font-size:18px; display:none; position:absolute; }
+.text_animate3 { background:#e3841d; color:#ffffff; padding:10px; font-size:18px; display:none; position:absolute; }
+.text_animate4 { background:#000000; color:#dddddd; padding:10px; font-size:14px; display:none; position:absolute; }
+.text_animate5 { background:#ffffff; color:#222222; padding:10px; font-size:14px; display:none; position:absolute; text-align:center; }
+.leaf_animate { background:url(img/assets/leaf.png) no-repeat; width:287px; height:143px; display:none; position:absolute; }
+.painting_animate { background:url(img/assets/picture.png) no-repeat; width:117px; height:133px; display:none; position:absolute; }
+
+.hidden { display:none; }
+
+@media (max-width: 640px) {	
+	.text_animate1 { display:none !important; }
+	.text_animate2 { display:none !important; }
+	.text_animate3 { display:none !important; }
+	.text_animate4 { display:none !important; }
+	.text_animate5 { display:none !important; }
+	.leaf_animate { display:none !important; }
+	.painting_animate { display:none !important; }
+}
+
+
+/* -----------------------------------------*/
+/* set effects for individual layers */
+/* -----------------------------------------*/
+
+#slide2_ani1 {
+	animation-duration: 1s;
+    animation-delay: .1s; 
+	-moz-animation-duration: 1s;
+    -moz-animation-delay: .1s;
+	-webkit-animation-duration: 1s;
+    -webkit-animation-delay: .1s;
+	-ms-animation-duration: 1s;
+    -ms-animation-delay: .1s;
+	-o-animation-duration: 1s;
+    -o-animation-delay: .1s;
+}
+#slide2_ani2 {
+	animation-duration: 1s;
+    animation-delay: .4s;
+	-moz-animation-duration: 1s;
+    -moz-animation-delay: .4s;
+	-webkit-animation-duration: 1s;
+    -webkit-animation-delay: .4s;
+	-ms-animation-duration: 1s;
+    -ms-animation-delay: .4s;
+	-o-animation-duration: 1s;
+    -o-animation-delay: .4s;
+}
+#slide2_ani3 {
+	animation-duration: 1s;
+    animation-delay: .8s;
+	-moz-animation-duration: 1s;
+    -moz-animation-delay: .8s;
+	-webkit-animation-duration: 1s;
+    -webkit-animation-delay: .8s;
+	-ms-animation-duration: 1s;
+    -ms-animation-delay: .8s;
+	-o-animation-duration: 1s;
+    -o-animation-delay: .8s;
+}
+
+</style>
+    
+<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript" src="js/jquery.versatileTouchSlider.min.js"></script>
+
+<script>
+
+jQuery(document).ready(function() {
+	
+	$.versatileTouchSlider('#banner', {
+			slideWidth: 650, //some number. ex: 650 or '100%'
+			slideHeight: 400, //some number. ex: 400 or 'auto'
+			showPreviousNext: true,
+			currentSlide: 0,
+			scrollSpeed: 600,
+			autoSlide: true,
+			autoSlideDelay: 4000,
+			showPlayPause: false,
+			showPagination: true,
+			alignPagination: 'center',
+			alignMenu: 'left',
+			swipeDrag: true,
+			sliderType: 'image_banner',
+			pageStyle: 'bullets', // numbers, bullets, thumbnails
+			orientation: 'horizontal', // horizontal, vertical (if vertical, the "slideHeight" option must be a number, not 'auto')
+			onScrollEvent: function(slideNum) { textAnimate(slideNum) }, 
+			ajaxEvent: function() {}
+		}
+	);
+	
+	var numCurrent, sld = $('.sti_slide');
+	var suppTrans = supportsTransitions();
+
+	function textAnimate(slideNum) {	
+		
+		if (numCurrent == slideNum) return;
+		
+		for (var i=0; i < sld.length; i++) {
+			sld.eq(i).children().not('.main_image').hide().attr('class',"");
+		}
+		
+		//See all effects available here: http://daneden.me/animate/
+				
+		switch(slideNum) {
+			case 0:
+				//if support cs3 animations
+				if(suppTrans) {
+					$('#slide1_ani1').css({ display:'block', left:30, bottom:30 }).attr('class',"text_animate1 animated bounceInLeft");
+					$('#slide1_ani2').css({ display:'block', left:75, bottom:68 }).attr('class',"text_animate2 animated bounceInRight");
+					$('#slide1_ani3').css({ display:'block', left:40, bottom:106 }).attr('class',"text_animate3 animated rotateInDownLeft");
+					$('#slide1_ani4').css({ display:'block', right:0 }).attr('class',"leaf_animate animated fadeIn");
+				} else {
+					//if not, use jQuery fallback
+					$('#slide1_ani1').css({ display:'block', left:30, bottom:30, opacity: 0 }).attr('class',"text_animate1").stop().delay(0).animate({ opacity: .8 }, { duration: 800 } );
+					$('#slide1_ani2').css({ display:'block', left:75, bottom:68, opacity: 0 }).attr('class',"text_animate2").stop().delay(200).animate({ opacity: .8 }, { duration: 800 } );
+					$('#slide1_ani3').css({ display:'block', left:40, bottom:106, opacity: 0 }).attr('class',"text_animate3").stop().delay(400).animate({ opacity: .8 }, { duration: 800 } );
+					$('#slide1_ani4').css({ display:'block', right:0, opacity: 0 }).attr('class',"leaf_animate").stop().delay(600).animate({ opacity: 1 }, { duration: 800 } );
+				}
+				break;
+				
+			case 1:
+				if(suppTrans) {
+					$('#slide2_ani1').css({ display:'block', left:110, top:30 }).attr('class',"text_animate1 animated lightSpeedIn");
+					$('#slide2_ani2').css({ display:'block', left:110, top:72 }).attr('class',"text_animate2 animated lightSpeedIn");
+					$('#slide2_ani3').css({ display:'block', left:110, top:114 }).attr('class',"text_animate1 animated lightSpeedIn");
+				} else {
+					$('#slide2_ani1').css({ display:'block', left:110, top:30, opacity: 0 }).attr('class',"text_animate1").stop().delay(0).animate({ opacity: .8 }, { duration: 600 } );
+					$('#slide2_ani2').css({ display:'block', left:110, top:72, opacity: 0 }).attr('class',"text_animate2").stop().delay(200).animate({ opacity: .8 }, { duration: 600 } );
+					$('#slide2_ani3').css({ display:'block', left:110, top:114, opacity: 0 }).attr('class',"text_animate1").stop().delay(400).animate({ opacity: .8 }, { duration: 600 } );
+				}
+				break;
+				
+			case 2:
+				if(suppTrans) {
+					$('#slide3_ani1').css({ display:'block', left:110, top:30 }).attr('class',"text_animate4 animated bounceInUp");
+				} else {
+					$('#slide3_ani1').css({ display:'block', left:110, top:400, opacity: 0 }).attr('class',"text_animate4").stop().delay(0).animate({ opacity: .8, top:30 }, { duration: 600 } );
+				}
+				break;
+				
+			case 3:
+				if(suppTrans) {
+					$('#slide4_ani1').css({ display:'block', left:110, bottom:30 }).attr('class',"text_animate5 animated fadeInRight");
+				} else {
+					$('#slide4_ani1').css({ display:'block', left:110, bottom:30, width:'auto', opacity: 0 }).attr('class',"text_animate5").stop().delay(0).animate({ left:0, opacity: .9, bottom:30, width:650 }, { duration: 600 } );
+				}
+				break;
+				
+			case 4:
+				if(suppTrans) {
+					$('#slide5_ani1').css({ display:'block', left:195, top:18 }).attr('class',"painting_animate animated swing");
+					$('#slide5_ani2').css({ display:'block', left:30, bottom:65 }).attr('class',"text_animate1 animated bounceInDown");
+				} else {
+					$('#slide5_ani1').css({ display:'block', left:195, top:18, opacity: 0 }).attr('class',"painting_animate").stop().delay(0).animate({ opacity: .9 }, { duration: 600 } );
+					$('#slide5_ani2').css({ display:'block', left:30, bottom:65, opacity: 0 }).attr('class',"text_animate1").stop().delay(300).animate({ opacity: .9 }, { duration: 600 } );
+				}
+				break;
+				
+			default:
+  				//none
+		}
+		
+		numCurrent = slideNum;
+	}
+
+});//ready
+
+</script>
+
+</head>
+	
+<body>
+
+<div class="sti_container" id="banner" style="margin-top:50px;">
+
+	<div class="slider_description">
+    	<strong>Banner rotator using callback with CSS3 Animate, jQuery fallback</strong>. It is possible do many customizations and can add any number of layers.<br><br>
+    	See all css3 effects available here: http://daneden.me/animate/
+    </div>
+        
+	<!-- slider -->
+
+    <div class="sti_slider">
+        <div class="sti_items">
+        
+        	<div class="sti_slide">
+            	<img class="main_image" src="content/image/v_banner_650x400.jpg" alt="">
+                <div id="slide1_ani1" class="hidden">Lorem ipsum dolor sit amet</div>
+                <div id="slide1_ani2" class="hidden">Nulla pretium, justo vitae tempus adipiscing</div>
+                <div id="slide1_ani3" class="hidden">Curabitur vehicula ipsum non lectus ultricies</div>
+                <div id="slide1_ani4" class="hidden"></div>
+			 </div>
+            
+            <div class="sti_slide">
+            	<img class="main_image" src="content/image/v_banner_650x400.jpg" alt="">
+                <div id="slide2_ani1" class="hidden">Lorem ipsum dolor sit amet</div>
+                <div id="slide2_ani2" class="hidden">Vitae tempus nulla pretium, justo adipiscing</div>
+                <div id="slide2_ani3" class="hidden">Nulla pretium, justo vitae tempus tristique senectus et</div>
+				<div id="slide2_ani4" class="hidden">Habitant morbi tristique senectus et netus</div>
+            </div>
+            
+            <div class="sti_slide">
+            	<img class="main_image" src="content/image/v_banner_650x400.jpg" alt="">
+                <div id="slide3_ani1" class="hidden">Vestibulum semper lectus sit justo vitae tempus</div>
+            </div>
+            
+            <div class="sti_slide">
+            	<img class="main_image" src="content/image/v_banner_650x400.jpg" alt="">
+                <div id="slide4_ani1" class="hidden">Pellentesque habitant morbi tristique senectus et netus et fames</div>
+            </div>
+            
+            <div class="sti_slide">
+            	<img class="main_image" src="content/image/v_banner_650x400.jpg" alt="">
+                <div id="slide5_ani1" class="hidden"></div>
+                <div id="slide5_ani2" class="hidden">Lorem ipsum dolor sit amet nulla pretium, justo vitae tempus adipiscing</div>
+            </div>
+            
+        </div><!-- sti_items -->
+    </div><!-- sti_slider -->
+    
+    <div class="sti_paginate">
+    	<div class="sti_page">
+		</div>
+        
+        <div class="sti_control">
+        	<a href="#" class="sti_btn sti_play"><img src="img/play.png" alt=""></a>
+            <a href="#" class="sti_btn sti_pause"><img src="img/pause.png" alt=""></a>
+        </div>
+    </div>
+     
+</div><!-- sti_container -->
+
+</body>
+</html>

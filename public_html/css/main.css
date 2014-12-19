@@ -1,0 +1,212 @@
+@import "../fonts/helvetica/helvetica.css";
+body {
+  font-family: "Arial";
+  background: url("../img/body.jpg");
+  background-size: 100% !important;
+  background-repeat: repeat-y;
+}
+.container {
+  background: url("../img/bg.png") #f4f4f4;
+}
+.content {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  position: relative;
+}
+@import "../fonts/helvetica/helvetica.css";
+.menu,
+header {
+  background-color: #fff;
+}
+.menu-header li {
+  display: inline-block;
+}
+.menu-header li a {
+  font-family: "Arial";
+  color: #000;
+  font-size: 1.1em;
+  text-decoration: none;
+  display: block;
+  border-bottom: 5px solid #f1f2f2;
+  height: 30px;
+  padding: 0 5px;
+  margin-right: 5px;
+}
+.menu-header li a:hover {
+  border-bottom: 5px solid #ffcb05;
+  color: #c52d16;
+}
+.menu-header li a.active {
+  border-bottom: 5px solid #ffcb05;
+  color: #c52d16;
+}
+.news-rotator {
+  border: 1px solid #ccc;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+}
+.icon {
+  background: #c52d16;
+  border-radius: 50px;
+  display: block;
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  margin-top: -55px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  color: #fff;
+  font-size: 0.9em;
+  text-align: center;
+}
+.ico-pen::before {
+  content: "";
+  background: url("../img/pen.png");
+  background-size: cover;
+  display: block;
+  height: 25px;
+  width: 25px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.ico-news::before {
+  content: "";
+  background: url("../img/newspaper.png");
+  background-size: cover;
+  display: block;
+  height: 25px;
+  width: 25px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.ico-apoio::before {
+  content: "";
+  background: url("../img/bullhorn.png");
+  background-size: cover;
+  display: block;
+  height: 25px;
+  width: 25px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.ico-video::before {
+  content: "";
+  background: url("../img/play.png");
+  background-size: cover;
+  display: block;
+  height: 25px;
+  width: 25px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.ico-propostas::before {
+  content: "";
+  background: url("../img/pencil.png");
+  background-size: cover;
+  display: block;
+  height: 25px;
+  width: 25px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.ico-campanha::before {
+  content: "";
+  background: url("../img/signup.png");
+  background-size: cover;
+  display: block;
+  height: 25px;
+  width: 25px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.ico-participe::before {
+  content: "";
+  background: url("../img/bubbles.png");
+  background-size: cover;
+  display: block;
+  height: 25px;
+  width: 25px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.ico-contato::before {
+  content: "";
+  background: url("../img/envelope.png");
+  background-size: cover;
+  display: block;
+  height: 25px;
+  width: 25px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.apoio-side {
+  margin-bottom: 25px;
+}
+.apoio-side .top {
+  margin-top: 5px;
+}
+.apoio-side .img-apoio {
+  display: block;
+  height: 110px;
+  overflow: hidden;
+  max-width: 90%;
+  border-radius: 0 !important;
+  margin0: auto;
+}
+.apoio-side .enlace {
+  text-decoration: none;
+  font-size: 0.9em;
+  text-transformation: uppercase;
+  color: #000;
+}
+.ico-artigos::before {
+  content: "";
+  background: url("../img/quill.png");
+  background-size: cover;
+  display: block;
+  height: 25px;
+  width: 25px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.ico-artigos-gris {
+  margin-top: 30px;
+  display: block !important;
+  height: 80px !important;
+  width: 80px !important;
+}
+.ico-artigos-gris::before {
+  content: "";
+  background-color: #eee;
+  background: url("../img/quill.png");
+  background-size: cover;
+  display: block;
+  height: 25px;
+  width: 25px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.news-image {
+  border-radius: 600px;
+  border: 5px solid #d1d3d4;
+}
+.news-desc {
+  font-size: 0.8em;
+}
+p {
+  text-align: justify;
+}
+.bio {
+  display: block;
+  border-bottom: 5px solid #ffcb05 !important;
+  height: 40px;
+  width: auto;
+  padding: 0 5px;
+}
+.footer {
+  background: #c52d16;
+  color: #fff;
+}

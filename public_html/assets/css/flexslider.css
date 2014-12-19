@@ -1,0 +1,227 @@
+
+
+#flexslider .slides > li {
+	display: none;
+	position:relative
+} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flex-pauseplay span {
+	text-transform: capitalize;
+}
+/* Clearfix for the .slides element */
+.slides:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+html[xmlns] .slides {
+	display: block;
+}
+* html .slides {
+	height: 1%;
+}
+#flexslider {
+	position:relative;
+	overflow:hidden;
+	height:484px
+}
+
+.slides {
+	list-style: none outside none;
+	margin:0;
+}
+/* Control Nav */
+#flexslider .flex-direction-nav {
+	position:absolute;
+	bottom:0;
+	left:46%;
+	height: 48px;
+	overflow:hidden;
+	width:92px;
+	z-index:9;
+	list-style:none;
+}
+
+
+
+
+
+
+
+/* #carousel */
+ 
+
+#carousel {
+    background: none repeat scroll 0 0 #E8E8E8;
+    height: 182px;
+    margin-top: 2px;
+    overflow: hidden;
+    padding: 23px 25px 0 25px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+}
+#carousel .slides li {
+	cursor:pointer;
+	position:relative;
+	height:133px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	float:left;
+	margin: 0 20px 0 0px;
+	width: 215px !important;
+}
+
+#carousel .slides li .slide:hover,
+.flex-active-slide .slide {
+	background: #bfbfbf;
+}
+
+#flexslider .flex-prev {
+	display: block;
+	width: 9px;
+	height: 11px;
+	background: url(../images/prev1.png) 0 0 no-repeat;
+	position: absolute;
+	bottom: 13px;
+	left: 17px;
+}
+
+
+.flex-pauseplay a {    
+    display: block;
+    height: 21px;
+    position: absolute;
+    width: 9px;
+    bottom: 8px;    
+    right: 41px;
+    z-index: 999;
+}
+
+
+.flex-play:hover {
+	background-position: 2px bottom;
+}
+
+.flex-pause:hover {
+	background-position: 0 bottom;
+}
+
+.flex-play {
+	background: url("../images/play.png") no-repeat scroll 2px 0 transparent;
+}
+
+.flex-pause {
+	background: url("../images/pause.png") no-repeat scroll 0 0 transparent;
+}
+
+
+
+
+#flexslider .flex-next {
+    background: url("../images/next1.png") no-repeat scroll 0 0 transparent;
+    bottom: 13px;
+    display: block;
+    height: 11px;
+    position: absolute;
+    right: 17px;
+    width: 9px;
+}
+
+
+#flexslider .flex-next:hover,
+#flexslider .flex-prev:hover {
+	background-position: 0 bottom;
+}
+
+.flex-pauseplay {
+	position: absolute !important;
+	background: url(../images/bg1.png) 0 0 repeat;
+	bottom: 0;
+	border-radius: 500px 500px 0 0;
+	left: 46%;
+	width: 92px;
+	height: 48px;
+}
+
+.slide {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 13px;
+	transition: all 0.4s ease 0s;
+	background: #fff;
+	position: relative;	
+}
+
+#carousel .flex-viewport {
+	padding-bottom: 14px;
+}
+
+.slide:after {
+	position: absolute;
+	display: block;
+	width: 220px;
+	height: 14px;
+	bottom: -14px;
+	left: 0;
+	content: '';
+	background: url(../images/shadow.png) 0 0 no-repeat;
+}
+
+
+
+#carousel .flex-active-slide {
+	cursor:default
+}
+
+.flex-control-nav {
+	display: none;
+}
+
+#carousel .flex-direction-nav {
+	top:0;
+	left:0;
+	position:absolute;
+	margin:0; 
+	width:100%;
+	list-style:none;
+	height:0
+}
+
+#carousel .flex-prev {
+    background: url("../images/prev.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    display: block;
+    height: 133px;
+    left: 0px;
+    position: absolute;
+    top: 24px;
+    width: 20px;
+}
+
+#carousel .flex-next {
+	display: block;
+	width: 20px;
+	height: 133px;
+	position: absolute;
+	top: 24px;
+	right: 0px;
+	background:  url(../images/next.png) 0 0 no-repeat;
+}
+
+#carousel .flex-next:hover,
+#carousel .flex-prev:hover {
+	background-position: 0 -167px;
+}
+
+
+
+
+
+
+

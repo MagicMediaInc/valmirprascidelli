@@ -1,0 +1,42 @@
+@import "../fonts/helvetica/helvetica.css";
+body {
+  font-family: "Arial";
+  background: url("../img/bg.png") #f4f4f4;
+}
+@import "../fonts/helvetica/helvetica.css";
+.menu,
+header {
+  background-color: #fff;
+}
+.menu-header li {
+  display: inline-block;
+}
+.menu-header li a {
+  font-family: "Arial";
+  color: #000;
+  font-size: 1.1em;
+  text-decoration: none;
+  display: block;
+  border-bottom: 5px solid #f1f2f2;
+  height: 30px;
+  padding: 0 5px;
+  margin-right: 5px;
+}
+.menu-header li a:hover {
+  border-bottom: 5px solid #ffcb05;
+  color: #c52d16;
+}
+.menu-header li a.active {
+  border-bottom: 5px solid #ffcb05;
+  color: #c52d16;
+}
+.news-rotator {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+}
+.footer {
+  background: #c52d16;
+  color: #fff;
+}

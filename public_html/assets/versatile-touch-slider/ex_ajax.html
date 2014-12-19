@@ -1,0 +1,110 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+<title>Versatile Touch Slider</title>
+
+<link rel="stylesheet" href="css/sti_style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="mep/player/mediaelementplayer.css">
+
+<style>
+body { margin:0; }
+</style>
+    
+<script src="js/jquery-1.7.min.js"></script>
+<script src="js/jquery.touchSwipe.min.js"></script>
+<script src="js/jquery.versatileTouchSlider.min.js"></script>
+<script src="mep/player/mediaelement-and-player.min.js"></script>
+
+<script>
+
+jQuery(document).ready(function() {
+	
+	// -------------------------------- //
+	// load content with ajax
+	// -------------------------------- //
+	
+	function getAjaxContent(filename, autoSlideActive) {
+
+		$.ajax({
+			url: 'ajax/' + filename,
+			type: 'GET',
+			dataType: 'html',
+			beforeSend: function() {
+				$('.sti_menu').append('<div class="preload_16"></div>');
+			},
+			success: function(data) {
+				
+				//remove preload
+				$('.preload_16').fadeTo("slow", 0);
+				setTimeout( function() { $('.preload_16').remove() }, 500);
+				
+				//load data and initialize plugin
+				setTimeout( function() { $('.ajax_content').html(data); }, 500);
+				setTimeout( function() { loadSlider(autoSlideActive) }, 500);
+			}
+		});
+	}
+	
+	var autoSlideActive = true;
+	getAjaxContent('shelf_bestsellers.html', autoSlideActive);
+	
+	function loadSlider(autoSlideActive) {
+		$.versatileTouchSlider('#ex_ajax', {
+				slideWidth: 560, // some number. ex: 560 or '100%'
+				slideHeight: 'auto', // some number. ex: 220 or 'auto'
+				showPreviousNext: true,
+				currentSlide: 0,
+				scrollSpeed: 700,
+				autoSlide: (autoSlideActive) ? true : false,
+				autoSlideDelay: 3000,
+				showPlayPause: true,
+				showPagination: true,
+				alignPagination: 'left',
+				alignMenu: 'left',
+				swipeDrag: true,
+				sliderType: 'image_shelf', // image_shelf, image_banner, image_text, image_gallery
+				pageStyle: 'numbers', // numbers, bullets, thumbnails
+				onScrollEvent: function() {},
+				ajaxEvent: function(f, a) { 
+					getAjaxContent(f, a);
+				}
+			}
+		);
+	}//loadSlider
+
+});//ready
+
+</script>
+
+</head>
+	
+<body>
+
+
+<div class="sti_container" id="ex_ajax" style="margin-top:50px;">
+
+	<div class="slider_description"><strong>Menu with categories</strong>. The content is open with Ajax. When set to "autoSlide" the navigation is automatic, in menu and pagination.</div>
+
+
+<div class="sti_menu">
+        <a href="#" data-url="shelf_bestsellers.html" class="sti_btn active">Best Sellers</a>
+        <a href="#" data-url="shelf_design.html" class="sti_btn">Design</a>
+        <a href="#" data-url="shelf_fashion.html" class="sti_btn">Fashion</a>
+        <a href="#" data-url="shelf_house.html" class="sti_btn">House</a>
+        <a href="#" data-url="shelf_food.html" class="sti_btn">Food</a>
+        <a href="#" data-url="shelf_painting.html" class="sti_btn">Painting</a>
+    </div>
+
+	<!-- ajax content will be added here -->
+    
+    <div class="ajax_content"></div>
+ 
+</div><!-- sti_container -->
+
+<!-- <div id="debug" style="background:#ddd; padding:10px; font-family:Arial, sans-serif; margin:0 auto; width:560px; min-height:20px;">no resize</div> -->
+
+</body>
+</html>

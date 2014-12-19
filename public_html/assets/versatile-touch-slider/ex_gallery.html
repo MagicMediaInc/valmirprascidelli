@@ -1,0 +1,178 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+<title>Versatile Touch Slider</title>
+
+<link rel="stylesheet" href="css/sti_style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="mep/player/mediaelementplayer.css">
+
+<style>
+body { margin:0; }
+</style>
+    
+<script src="js/jquery-1.7.min.js"></script>
+<script src="js/jquery.touchSwipe.min.js"></script>
+<script src="js/jquery.versatileTouchSlider.min.js"></script>
+<script src="mep/player/mediaelement-and-player.min.js"></script>
+
+<script>
+jQuery(document).ready(function() {
+
+	$.versatileTouchSlider('#ex_gallery', {
+			slideWidth: 960, // some number. ex: 960 or '100%'
+			slideHeight: 'auto', // some number. ex: 220 or 'auto'
+			showPreviousNext: false,
+			currentSlide: 0,
+			scrollSpeed: 600,
+			autoSlide: false,
+			autoSlideDelay: 3000,
+			showPlayPause: true,
+			showPagination: true,
+			alignPagination: 'center',
+			alignMenu: 'left',
+			swipeDrag: true,
+			sliderType: 'image_gallery', // image_shelf, image_banner, image_text, image_gallery
+			pageStyle: 'bullets', // numbers, bullets, thumbnails
+			onScrollEvent: function() {},
+			ajaxEvent: function() {}
+		}
+	);
+	
+});
+</script>
+
+</head>
+	
+<body>
+
+
+<div class="sti_container" id="ex_gallery" style="margin-top:50px;">
+
+	<div class="slider_description"><strong>Slider Type "image_gallery" with white background</strong>. The design can be changed adding styles, textures, shadows etc.</div>
+
+    <div class="sti_slider">
+        <div class="sti_items">
+        
+        	<!-- SLIDE GROUP 1 -->
+        
+            <div class="sti_slide">
+                
+                <div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                    <a href="#" class="link more" title="Icon More"></a>
+                </div>
+                <div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                    <a href="http://www.youtube.com/watch?v=MOiyD26cJ2A" class="link video sti_lightbox" data-type="video-youtube" data-size="700x420" title="Youtube Video (For The Birds / PIXAR)"></a>
+                    <a href="#" class="ribbon ribbon_green" title="Ribbon"></a>
+                </div>
+                <div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                    <a href="http://vimeo.com/53327926" class="link video sti_lightbox" data-type="video-vimeo" data-size="700x394" title="Vimeo Video"></a>
+                    <a href="#" class="ribbon ribbon_red" title="Ribbon"></a>
+                </div>
+                <div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                	<a href="content/audio/AirReview-Landmarks-02-ChasingCorporate.mp3" class="link audio sti_lightbox"  data-type="audio" data-size="450x50" title="Audio Example. HTML5 Support / Flash Fallback"></a>
+                    <a href="#" class="ribbon ribbon_green" title="Ribbon"></a>
+                </div>
+                <div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                    <a href="content/video/Finding_Nemo_Teaser.mp4" class="link video sti_lightbox" data-type="video" data-size="540x303" title="MP4 Video. HTML5 Support / Flash Fallback"></a>
+                    <a href="#" class="ribbon ribbon_orange" title="Ribbon"></a>
+                </div>
+                <div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                    <a href="content/image/v_banner_420x280.jpg" class="link zoom sti_lightbox" data-type="image" title="Lightbox image example"></a>
+                    <a href="#" class="ribbon ribbon_blue" title="Ribbon"></a>
+                </div>
+                <div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                	<a href="content/audio/srvalle.mp3" class="link audio sti_lightbox"  data-type="audio" data-size="450x50" title="Audio Example 2. HTML5 Support / Flash Fallback"></a>
+                </div>
+                
+            </div>
+            
+            <!-- SLIDE GROUP 2 -->
+
+            <div class="sti_slide">
+                
+                <div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                    <a href="#" class="link more" title="Title"></a>
+                </div>
+                <div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                    <a href="#" class="link more" title="Title"></a>
+                    <a href="#" class="ribbon ribbon_green" title="Ribbon"></a>
+                </div>
+                <div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                	<a href="#" class="link more" title="Title"></a>
+                </div>
+                <div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                	<a href="#" class="link more" title="Title"></a>
+                </div>
+				<div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                    <a href="#" class="link more" title="Title"></a>
+                </div>
+                <div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                    <a href="#" class="link more" title="Title"></a>
+                    <a href="#" class="ribbon ribbon_red" title="Ribbon"></a>
+                </div>
+                <div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                    <a href="#" class="link more" title="Title"></a>
+                </div>
+                
+            </div>
+
+            <!-- SLIDE GROUP 3 -->
+        	
+            <div class="sti_slide">
+                
+                <div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                    <a href="#" class="link more" title="Title"></a>
+                    <a href="#" class="ribbon ribbon_green" title="Ribbon"></a>
+                </div>
+                <div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                    <a href="#" class="link more" title="Title"></a>
+                </div>
+                <div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                	<a href="#" class="link more" title="Title"></a>
+                    <a href="#" class="ribbon ribbon_gray" title="Ribbon"></a>
+                </div>
+                <div class="sti_prod" data-effects="false">
+                	<img src="content/image/v_mag_110x150.jpg" alt="" width="110" height="150">
+                	<a href="#" class="link more" title="Title"></a>
+                    <a href="#" class="ribbon ribbon_red" title="Ribbon"></a>
+                </div>
+                
+            </div>
+            
+        </div><!-- sti_items -->
+    </div><!-- sti_slider -->
+    
+    <div id="shadow_extra" style="margin-top:10px;"><img src="img/divider_extra.png" alt="" width="100%" height="6"></div>
+    
+    <div class="sti_paginate">
+    	<div class="sti_page"></div>
+        
+        <div class="sti_control">
+        	<a href="#" class="sti_btn sti_play"><img src="img/play.png" alt=""></a>
+            <a href="#" class="sti_btn sti_pause"><img src="img/pause.png" alt=""></a>
+        </div>
+    </div>
+ 
+</div><!-- sti_container -->
+
+</body>
+</html>

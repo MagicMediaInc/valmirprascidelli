@@ -1,0 +1,108 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+<title>Versatile Touch Slider</title>
+
+<link rel="stylesheet" href="css/sti_style.css" type="text/css" media="screen">
+
+<style>
+body { margin:0; }
+</style>
+    
+<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript" src="js/jquery.versatileTouchSlider.min.js"></script>
+
+<script>
+
+jQuery(document).ready(function() {
+	
+	$.versatileTouchSlider('#banner', {
+			slideWidth: 880, // some number. ex: 880 or '100%'
+			slideHeight: 340, // some number. ex: 220 or 'auto'
+			showPreviousNext: true,
+			currentSlide: 0,
+			scrollSpeed: 600,
+			autoSlide: true,
+			autoSlideDelay: 3000,
+			showPlayPause: true,
+			showPagination: true,
+			alignPagination: 'center',
+			alignMenu: 'left',
+			swipeDrag: true,
+			sliderType: 'image_banner', // image_shelf, image_banner, image_text, image_gallery
+			pageStyle: 'thumbnails', // numbers, bullets, thumbnails
+			onScrollEvent: function(slideNum) { $('#callback').text('Slide Number: ' + slideNum) }, 
+			ajaxEvent: function() {}
+		}
+	);
+
+});//ready
+
+</script>
+
+</head>
+	
+<body>
+
+<div class="sti_container" id="banner" style="margin-top:50px;">
+
+	<div class="slider_description"><strong>Banner rotator using thumbnails</strong>. In the paging can be used numbers, bullets or thumbnails.</div>
+    
+	<!-- slider -->
+
+    <div class="sti_slider">
+        <div class="sti_items">
+        
+        	<div class="sti_slide">
+                <a href="#" target="_blank"><img class="image" src="content/image/v_banner_880x340.jpg" alt=""></a>
+                <div class="banner_title">Drag and click events enabled without conflict. The link can be directly on the image. <a href="#" target="_blank">Read More</a></div>
+			 </div>
+            
+            <div class="sti_slide">
+            	<img class="image" src="content/image/v_banner_880x340.jpg" alt="">
+                <div class="banner_title">Curabitur augue ante <a href="#">Read More</a></div>
+            </div>
+            
+            <div class="sti_slide">
+            	<img class="image" src="content/image/v_banner_880x340.jpg" alt="">
+                <div class="banner_title">Vestibulum semper lectus sit <a href="#">Read More</a></div>
+            </div>
+            
+            <div class="sti_slide">
+            	<img class="image" src="content/image/v_banner_880x340.jpg" alt="">
+                <div class="banner_title">Fusce molestie euismod <a href="#">Read More</a></div>
+            </div>
+            
+            <div class="sti_slide">
+            	<img class="image" src="content/image/v_banner_880x340.jpg" alt="">
+                <div class="banner_title">Nullam in ligula et magna <a href="#">Read More</a></div>
+            </div>
+            
+        </div><!-- sti_items -->
+    </div><!-- sti_slider -->
+    
+    <div class="sti_paginate">
+    	<div class="sti_page">
+        	<img src="content/image/v_banner_thumb.jpg" alt="">
+            <img src="content/image/v_banner_thumb.jpg" alt="">
+            <img src="content/image/v_banner_thumb.jpg" alt="">
+            <img src="content/image/v_banner_thumb.jpg" alt="">
+            <img src="content/image/v_banner_thumb.jpg" alt="">
+        </div>
+        
+        <div class="sti_control">
+        	<a href="#" class="sti_btn sti_play"><img src="img/play.png" alt=""></a>
+            <a href="#" class="sti_btn sti_pause"><img src="img/pause.png" alt=""></a>
+        </div>
+    </div>
+    
+    <div class="sti_clear"></div>
+    <div id="callback" style="background:#f4f4f4; width:160px; padding:10px; color:#999; font-size:12px; margin:50px auto 0 auto; text-align:center;">callback onScrollEvent</div>
+ 
+</div><!-- sti_container -->
+
+</body>
+</html>

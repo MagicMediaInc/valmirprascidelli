@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Versatile Touch Slider</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+</head>
+
+<body>
+
+<div id="container">
+
+    <h1>Versatile Touch Slider</h1>
+    
+    Author: Sergio Valle
+    <br>
+    Date released: Dec 10, 2012
+    <br><br><br>
+	<span id="result_box" lang="en">Thank you for purchase this plugin. <br>
+	<span id="result_box2" lang="en">If you have any questions that are not specified here</span>, please feel free to email</span> me: <a href="mailto:srvalle@gmail.com">srvalle</a>
+
+    
+    <div class="sections_content">
+    
+        <div id="table_content">
+          	
+            <h3><strong>Table of Contents</strong></h3>
+          
+            <ol class="alpha">
+            	<li><a href="#about">About</a></li>
+                <li><a href="#install">Install</a></li>
+                <li><a href="#parameters">Parameters</a></li>
+                <li><a href="#html_markup_info">HTML Markup informations</a></li>
+                <li><a href="#credits">Credits</a></li>
+            </ol>
+        </div>
+    </div>
+
+        
+	<div class="sections_content">
+            
+        <br>
+        
+        <h4 id="about">About</h4>
+        <p>Versatile Touch Slider is a jQuery plugin with many possibilities. It may just be a banner rotator or a bookshelf to display products. It has the feature touch to mobiles and  drag for the desktops.</p>
+<p>It is responsive and <strong></strong> adapts to different types of resolution and media. Can be viewed with auto adjusts on desktops, tablets and smartphones.</p>
+<p> This package is also included multimedia resources. Video formats available: Youtube, Vimeo, MP4, FLV. Audio is also available (MP3 format). A lightbox (of the plugin) is used to display images, video and audio.</p>
+        
+<div class="space_hr"></div>
+        <div class="top"><a href="#">Back to Top</a></div>
+        
+        <h4 id="install">Install</h4>
+       <p>Below are the files that should be added inside the head tag of html.</p>
+        <p><strong>Styles</strong></p>
+        <p>
+		<img src="assets/images/styles.jpg" alt="" />
+        </p>
+        <p><strong>Scripts</strong></p>
+        <p>
+		<img src="assets/images/scripts.jpg" alt="" />
+        </p>
+        <div class="box_note">
+        Note that files <span class="text_gray">mediaelementplayer.css</span> e <span class="text_gray">mediaelement-and-player.min.js</span> need only be added if the intention is to use the multimedia capabilities of Video and Audio.
+        </div>
+        
+        <p><strong>Initialize the plugin</strong></p>
+        <img src="assets/images/init_plugin.jpg" alt="" />
+        <div class="box_note">
+        The above options may vary depending on the type of slider you want to use. For example, if you want the option of bookshelf, you should set the option sliderType to "image_shelf". For banner rotator sliderType to "image_banner". 
+        </div>
+        
+        <p><strong>HTML Markup</strong></p>
+        <p>In this plugin there are 4 types of slider (image_shelf, image_banner, image_text, image_gallery). The HTML markup is appropriate for each type of slider. Below is an example of the markup image_shelf.</p>
+        <p><strong>Important:</strong> <em>See in the examples available, the characteristics of each html markup for each type of slider. For example, if you want to use the plugin as a banner rotator, see the markup inside the file "<strong>ex_banner_thumbnails.html</strong>" or "<strong>ex_banner_callback.html</strong>"</em></p>
+        <br>
+        <img src="assets/images/html_markup_shelf.jpg" alt="" />
+        
+        
+		<div class="space_hr"></div>
+        <div class="top"><a href="#">Back to Top</a></div>
+        
+        <h4 id="parameters">Parameters</h4>
+        
+		<table>
+        	<tr>
+                <td width="172" class="td_top">Parameter</td>
+                <td width="713" class="td_top">Options</td>
+            </tr>
+            <tr>
+                <td class="td_parameter">slideWidth</td>
+                <td><strong>Number or "100%"</strong>.</td>
+            </tr>
+            <tr>
+                <td class="td_parameter">slideHeight</td>
+                <td><strong>Number or "auto"</strong>. For flexible slider height set to "auto"</td>
+            </tr>
+            <tr>
+                <td class="td_parameter">showPreviousNext</td>
+                <td><strong>true or false</strong>. Show or not the navigation buttons</td>
+            </tr>
+            <tr>
+                <td class="td_parameter">currentSlide</td>
+                <td><strong>0</strong>. (number) means the first slider. For example, if you want to start in the third slide, set for 2</td>
+            </tr>
+            <tr>
+                <td class="td_parameter">scrollSpeed</td>
+                <td><strong>Number</strong>. This value is specified in milliseconds. 1 second = 1000</td>
+            </tr>
+            <tr>
+                <td class="td_parameter">autoSlide</td>
+                <td><strong>true or false</strong>.</td>
+            </tr>
+            <tr>
+                <td class="td_parameter">autoSlideDelay</td>
+                <td><strong>Number</strong>. This value is specified in milliseconds. 1 second = 1000</td>
+            </tr>
+            <tr>
+                <td class="td_parameter">showPlayPause</td>
+                <td><strong>true or false</strong>. Show or not play/pause controls</td>
+            </tr>
+            <tr>
+                <td class="td_parameter">showPagination</td>
+                <td><strong>true or false</strong>. Show or not pagination</td>
+            </tr>
+            <tr>
+                <td class="td_parameter">alignPagination</td>
+                <td><strong>"left", "center", "right"</strong></td>
+            </tr>
+            <tr>
+                <td class="td_parameter">alignMenu</td>
+                <td><strong>"left", "center", "right"</strong></td>
+            </tr>
+            <tr>
+                <td class="td_parameter">swipeDrag</td>
+                <td><strong>true or false</strong>. Enables or not the option of touch swipe (mobile) and drag (desktop)</td>
+            </tr>
+            <tr>
+                <td class="td_parameter">sliderType</td>
+                <td><strong>"image_shelf", "image_banner", "image_text", "image_gallery"</strong></td>
+            </tr>
+            <tr>
+                <td class="td_parameter">pageStyle</td>
+                <td><strong>"numbers", "bullets", "thumbnails"</strong></td>
+            </tr>
+            <tr>
+              <td class="td_parameter">orientation</td>
+              <td><strong>"horizontal", "vertical"</strong>. If vertical, the "slideHeight" option must be a number, not 'auto'. The height of the slider needs to be constant.</td>
+            </tr>
+            <tr>
+                <td class="td_parameter">onScrollEvent</td>
+                <td><strong>callback function</strong>. This event is run every time that a slide is scrolled. See an example in the file "ex_banner_callback.html"</td>
+            </tr>
+            <tr>
+                <td class="td_parameter">ajaxEvent</td>
+                <td><strong>callback function</strong>. This event is only used for open content with ajax. See an example in the file "ex_ajax.html"</td>
+			</tr>
+		</table>
+        
+      <div class="space_hr"></div>
+        <div class="top"><a href="#">Back to Top</a></div>
+        
+        
+        <div class="space_hr"></div>
+        <div class="top"><a href="#">Back to Top</a></div>
+        
+        <h4 id="html_markup_info">HTML Markup informations</h4>
+        
+		<p><strong>Using Lightbox</strong></p>
+        <p>To use the lightbox just add the class "sti_lightbox". In the example below when clicking on the link will open a Vimeo video inside the Lightbox.</p>
+        <img src="assets/images/lightbox_example.jpg" alt="">
+        <div class="space_hr"></div>
+        
+        <br>
+        <p><strong>Using Ribbon</strong></p>
+        <p>The file .psd is available in the package if you want to change the design and text of the ribbon.</p>
+        <img src="assets/images/ribbon_example.jpg" alt="">
+        <div class="space_hr"></div>
+        
+        <br>
+        <p><strong>Using Icons</strong></p>
+        <p>The file .psd is available also in the package if you want to change the design of the icons.</p>
+        <img src="assets/images/icon_example.jpg" alt="">
+        <div class="space_hr"></div>
+        
+        <div class="space_hr"></div>
+        <div class="top"><a href="#">Back to Top</a></div>
+        
+        
+   		<h4 id="credits">Credits</h4>
+        <p>Design and development by <a href="http://srvalle.com/" target="_blank">srvalle</a></p>
+   	  	<p>
+        Thanks for all authors of the plugins used in this package:<br>
+        - <a href="https://github.com/mattbryson/TouchSwipe-Jquery-Plugin" target="_blank">touchSwipe - jQuery Plugin</a><br>
+        - <a href="https://github.com/desandro/imagesloaded" target="_blank">ImagesLoaded - jQueryPlugin</a><br>
+        - <a href="http://mediaelementjs.com/" target="_blank">MediaElementJs</a><br>
+        - <a href="http://www.onedesigns.com/freebies/custom-mediaelement-js-skin" target="_blank">Media Element Skin</a><br>
+        - <a href="http://daneden.me/animate/" target="_blank">Animate.css</a><br>
+        </p>
+      
+<div class="space_hr"></div>
+        <div class="top"><a href="#">Back to Top</a></div>
+            
+	</div><!-- sections_content -->
+    
+</div><!-- bookshelf_slider -->
+
+</body>
+</html>
